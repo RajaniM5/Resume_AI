@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Resume AI{% endblock %} — HR Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <style>
+    :root { --pico-font-size: 95%; }
+    .nav-wrap { border-bottom: 1px solid var(--pico-muted-border-color); margin-bottom: 2rem; }
+    .score-chip {
+      display: inline-block; min-width: 2.75rem; padding: 0.15rem 0.5rem;
+      border-radius: 999px; font-weight: 600; text-align: center; font-size: 0.85rem;
+    }
+    .score-high { background: #d7f3df; color: #14532d; }
+    .score-mid  { background: #fdf0c8; color: #7c5a00; }
+    .score-low  { background: #fbdada; color: #7a1f1f; }
+    .status-badge { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; }
+    .status-new { color: var(--pico-primary); }
+    .status-reviewed { color: var(--pico-muted-color); }
+    .status-overridden { color: #b45309; font-weight: 600; }
+    .pii { filter: blur(4px); transition: filter 0.15s ease; }
+    body.show-pii .pii { filter: none; }
+    .breakdown-row td { vertical-align: top; }
+    .contribution-bar {
+      height: 0.5rem; border-radius: 999px; background: var(--pico-primary);
+      display: inline-block; vertical-align: middle; margin-right: 0.5rem;
+    }
+    footer.container { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--pico-muted-border-color); font-size: 0.85rem; color: var(--pico-muted-color); }
+  </style>
+</head>
+<body>
+  <header class="nav-wrap">
+    <nav class="container">
+      <ul>
+        <li><strong>Resume AI</strong></li>
+      </ul>
+      <ul>
+        <li><a href="/dashboard/">Job Reqs</a></li>
+        <li><a href="/dashboard/audit">Audit Log</a></li>
+        <li><a href="#" onclick="document.body.classList.toggle('show-pii'); return false;">Toggle identifying info</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="container">
+    Sample data only — not wired to a live database. See docs/UI_DESIGN.md for the build plan.
+  </footer>
+</body>
+</html>

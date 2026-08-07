@@ -1,0 +1,26 @@
+Jane A. Doe
+jane.doe@example.com | (555) 123-4567 | linkedin.com/in/janedoe
+
+SUMMARY
+Senior backend engineer with 7+ years building scalable APIs.
+
+SKILLS
+Python, Django, FastAPI, PostgreSQL, AWS, Docker, Kubernetes, REST APIs, Git
+
+EXPERIENCE
+Senior Software Engineer, Acme Corp
+Jan 2021 - Present
+- Led migration of a monolith to microservices on AWS and Kubernetes
+- Built REST APIs in Python and FastAPI serving 10M requests/day
+- Mentored 4 junior engineers
+
+Software Engineer, Beta Inc
+Jun 2018 - Dec 2020
+- Built REST APIs using Django and PostgreSQL
+- Set up CI/CD pipelines with Docker
+
+EDUCATION
+Bachelor of Science in Computer Science, State University, 2018
+
+CERTIFICATIONS
+AWS Certified Solutions Architect - Associate

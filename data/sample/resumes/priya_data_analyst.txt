@@ -1,0 +1,20 @@
+Priya Nair
+priya.nair@example.com | (555) 222-3333 | linkedin.com/in/priyanair
+
+SUMMARY
+Data analyst with 4 years of experience in SQL, Python, and Tableau.
+
+SKILLS
+SQL, Python, Pandas, Tableau, Excel, Power BI, Data Analysis
+
+EXPERIENCE
+Data Analyst, Insight Metrics
+Mar 2020 - Present
+- Built dashboards in Tableau and Power BI for executive reporting
+- Automated ETL pipelines with Python and Pandas
+
+EDUCATION
+Master of Science in Statistics, Northfield University, 2019
+
+CERTIFICATIONS
+Tableau Desktop Specialist

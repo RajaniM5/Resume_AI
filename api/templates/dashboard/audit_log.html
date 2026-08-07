@@ -1,0 +1,33 @@
+{% extends "dashboard/base.html" %}
+{% block title %}Audit Log{% endblock %}
+{% block content %}
+  <hgroup>
+    <h1>Audit Log</h1>
+    <p>Every scoring decision and override, for compliance traceability (TASKS.md P3).</p>
+  </hgroup>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Timestamp</th>
+        <th>Candidate</th>
+        <th>Action</th>
+        <th>Actor</th>
+        <th>Model version</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in entries %}
+      <tr>
+        <td>{{ entry.timestamp }}</td>
+        <td><span class="pii">{{ entry.candidate_name }}</span></td>
+        <td>{{ entry.action }}</td>
+        <td>{{ entry.actor }}</td>
+        <td><code>{{ entry.model_version }}</code></td>
+        <td>{{ entry.reason or "—" }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

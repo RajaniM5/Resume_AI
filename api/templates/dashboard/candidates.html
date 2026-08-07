@@ -1,0 +1,46 @@
+{% extends "dashboard/base.html" %}
+{% block title %}{{ job_req.title }}{% endblock %}
+{% block content %}
+  <p><a href="/dashboard/">&larr; Job Reqs</a></p>
+  <hgroup>
+    <h1>{{ job_req.title }}</h1>
+    <p>{{ job_req.department }} · {{ candidates|length }} candidate{{ "s" if candidates|length != 1 else "" }} ranked by score</p>
+  </hgroup>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Candidate</th>
+        <th>Score</th>
+        <th>Status</th>
+        <th>Top matched skills</th>
+        <th>Missing</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in candidates %}
+      <tr>
+        <td><span class="pii">{{ c.name }}</span></td>
+        <td>
+          <span class="score-chip {% if c.score >= 85 %}score-high{% elif c.score >= 65 %}score-mid{% else %}score-low{% endif %}">
+            {{ c.score }}
+          </span>
+        </td>
+        <td><span class="status-badge status-{{ c.status }}">{{ c.status }}</span></td>
+        <td>
+          {% for s in c.top_matched_skills[:3] %}<span class="secondary">{{ s }}</span>{% if not loop.last %}, {% endif %}{% endfor %}
+        </td>
+        <td>
+          {% if c.top_missing_skills %}
+            {{ c.top_missing_skills|join(", ") }}
+          {% else %}
+            <span class="secondary">none</span>
+          {% endif %}
+        </td>
+        <td><a href="/dashboard/candidates/{{ c.id }}" role="button" class="outline">Review</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

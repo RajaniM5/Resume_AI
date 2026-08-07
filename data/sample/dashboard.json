@@ -1,0 +1,186 @@
+{
+  "job_reqs": [
+    {
+      "id": "req-101",
+      "title": "Senior Backend Engineer",
+      "department": "Engineering",
+      "status": "open",
+      "jd_text": "Looking for a Senior Backend Engineer with 5+ years building distributed systems in Python or Go. Must have production experience with PostgreSQL, message queues (Celery/RabbitMQ/Kafka), and REST API design. Experience with async programming and containerized deployments (Docker/Kubernetes) required. Bonus: exposure to ML/NLP pipelines."
+    },
+    {
+      "id": "req-102",
+      "title": "Data Scientist, NLP",
+      "department": "ML Platform",
+      "status": "open",
+      "jd_text": "Seeking a Data Scientist focused on NLP to build text classification and semantic matching models. Requires strong Python, experience with spaCy/HuggingFace transformers, and a track record shipping models to production. Familiarity with embeddings, fairness evaluation, and explainability techniques is a strong plus."
+    },
+    {
+      "id": "req-103",
+      "title": "Frontend Engineer, Internal Tools",
+      "department": "Engineering",
+      "status": "closed",
+      "jd_text": "Frontend Engineer to build internal admin tools. React or server-rendered templating experience, comfort working directly with backend teams on API contracts, and an eye for clean, fast internal UI over flashy design."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "cand-1001",
+      "job_req_id": "req-101",
+      "name": "Priya Natarajan",
+      "email": "priya.natarajan@example.com",
+      "school": "Georgia Tech",
+      "score": 91,
+      "status": "new",
+      "top_matched_skills": ["Python", "PostgreSQL", "Celery", "Docker", "REST API design"],
+      "top_missing_skills": ["Kubernetes"],
+      "resume_snippet": "6 years building backend services in Python/Django and FastAPI. Led migration of batch pipeline from cron to Celery+Redis, cut latency 40%.",
+      "resume_text": "Priya Natarajan\nSenior Software Engineer, 6 years experience.\n\nExperience:\n- Backend Engineer, Acme Corp (2021-present): Built and maintained FastAPI services handling 2M req/day. Migrated batch resume-processing pipeline from cron to Celery+Redis, reducing p95 latency 40%. Owned PostgreSQL schema design for core transactional data.\n- Software Engineer, Globex (2019-2021): Built REST APIs in Django, containerized services with Docker, deployed via CI/CD to AWS ECS.\n\nSkills: Python, FastAPI, Django, PostgreSQL, Celery, Redis, Docker, REST API design, async programming.\nEducation: B.S. Computer Science, Georgia Tech.",
+      "score_breakdown": [
+        {"factor": "Skill overlap", "weight": 0.45, "contribution": 42, "explanation": "5 of 6 required skills matched directly (Python, PostgreSQL, Celery, Docker, REST API design); Kubernetes not found in resume text."},
+        {"factor": "Semantic JD similarity", "weight": 0.35, "contribution": 33, "explanation": "Embedding cosine similarity 0.86 between resume and JD text — strong overlap in system design language."},
+        {"factor": "Experience level match", "weight": 0.20, "contribution": 16, "explanation": "6 years experience vs. 5+ years required."}
+      ]
+    },
+    {
+      "id": "cand-1002",
+      "job_req_id": "req-101",
+      "name": "Marcus Webb",
+      "email": "marcus.webb@example.com",
+      "school": "University of Michigan",
+      "score": 74,
+      "status": "reviewed",
+      "top_matched_skills": ["Python", "Docker", "REST API design"],
+      "top_missing_skills": ["Celery", "PostgreSQL experience at scale"],
+      "resume_snippet": "3 years backend experience, mostly Flask APIs on MySQL. Some Docker/CI exposure. Looking to grow into distributed systems work.",
+      "resume_text": "Marcus Webb\nBackend Developer, 3 years experience.\n\nExperience:\n- Backend Developer, Initech (2022-present): Built Flask REST APIs backed by MySQL. Containerized services with Docker for local dev.\n- Junior Developer, Startup Co (2021-2022): General web development, Python and JavaScript.\n\nSkills: Python, Flask, MySQL, Docker, REST API design, Git.\nEducation: B.S. Computer Science, University of Michigan.",
+      "score_breakdown": [
+        {"factor": "Skill overlap", "weight": 0.45, "contribution": 27, "explanation": "3 of 6 required skills matched (Python, Docker, REST API design); no direct mention of Celery, PostgreSQL, or Kubernetes."},
+        {"factor": "Semantic JD similarity", "weight": 0.35, "contribution": 26, "explanation": "Embedding cosine similarity 0.74 — related backend experience but different stack (Flask/MySQL vs. required async/Postgres/queue stack)."},
+        {"factor": "Experience level match", "weight": 0.20, "contribution": 21, "explanation": "3 years experience vs. 5+ years required — below target seniority."}
+      ]
+    },
+    {
+      "id": "cand-1003",
+      "job_req_id": "req-101",
+      "name": "Aiko Tanaka",
+      "email": "aiko.tanaka@example.com",
+      "school": "UC Berkeley",
+      "score": 88,
+      "status": "overridden",
+      "override_reason": "Score under-weights her 2 years leading a Kafka-based pipeline team, which is directly relevant even though 'Kafka' wasn't an exact keyword match against our 'message queues' JD phrasing. Advancing to onsite.",
+      "top_matched_skills": ["Python", "PostgreSQL", "Docker", "async programming"],
+      "top_missing_skills": ["Celery keyword match (uses Kafka instead)"],
+      "resume_snippet": "5 years distributed systems, led a team building a Kafka-based event pipeline at scale. Deep Python and Postgres experience.",
+      "resume_text": "Aiko Tanaka\nStaff Software Engineer, 8 years experience.\n\nExperience:\n- Tech Lead, DataFlow Inc (2020-present): Led a 4-person team building a Kafka-based event streaming pipeline processing 500M events/day. Deep PostgreSQL schema and query optimization work. Async Python services deployed on Docker/K8s.\n- Software Engineer, BigCo (2017-2020): Built internal tooling in Python.\n\nSkills: Python, PostgreSQL, Kafka, Docker, Kubernetes, async programming, distributed systems, team leadership.\nEducation: M.S. Computer Science, UC Berkeley.",
+      "score_breakdown": [
+        {"factor": "Skill overlap", "weight": 0.45, "contribution": 36, "explanation": "4 of 6 required skills matched directly. 'Celery' not found — resume uses 'Kafka' for message queue experience, which the keyword matcher does not treat as equivalent."},
+        {"factor": "Semantic JD similarity", "weight": 0.35, "contribution": 31, "explanation": "Embedding cosine similarity 0.83 — strong overlap despite keyword miss on Celery."},
+        {"factor": "Experience level match", "weight": 0.20, "contribution": 20, "explanation": "8 years experience vs. 5+ years required — exceeds target."}
+      ]
+    },
+    {
+      "id": "cand-1004",
+      "job_req_id": "req-102",
+      "name": "Daniel Osei",
+      "email": "daniel.osei@example.com",
+      "school": "Carnegie Mellon University",
+      "score": 95,
+      "status": "new",
+      "top_matched_skills": ["Python", "spaCy", "HuggingFace transformers", "embeddings", "fairness evaluation"],
+      "top_missing_skills": [],
+      "resume_snippet": "4 years NLP-focused data science, shipped text classification models to production, published internal fairness audit methodology.",
+      "resume_text": "Daniel Osei\nData Scientist, NLP, 4 years experience.\n\nExperience:\n- Data Scientist, LangTech (2022-present): Built and shipped text classification and semantic similarity models using spaCy and HuggingFace transformers. Authored the team's fairness evaluation framework, testing model outputs across demographic proxies.\n- ML Engineer Intern, ResearchLab (2021-2022): Sentence embedding research.\n\nSkills: Python, spaCy, HuggingFace transformers, sentence-transformers, embeddings, fairness evaluation, explainability, PyTorch.\nEducation: M.S. Machine Learning, Carnegie Mellon University.",
+      "score_breakdown": [
+        {"factor": "Skill overlap", "weight": 0.45, "contribution": 45, "explanation": "All required and bonus skills matched directly, including the fairness/explainability bonus criteria."},
+        {"factor": "Semantic JD similarity", "weight": 0.35, "contribution": 34, "explanation": "Embedding cosine similarity 0.91 — near-exact domain match."},
+        {"factor": "Experience level match", "weight": 0.20, "contribution": 16, "explanation": "4 years experience, JD did not specify a minimum — treated as meeting bar given shipped production models."}
+      ]
+    },
+    {
+      "id": "cand-1005",
+      "job_req_id": "req-102",
+      "name": "Sofia Ramirez",
+      "email": "sofia.ramirez@example.com",
+      "school": "University of Texas at Austin",
+      "score": 62,
+      "status": "new",
+      "top_matched_skills": ["Python", "embeddings"],
+      "top_missing_skills": ["spaCy", "HuggingFace transformers", "fairness evaluation"],
+      "resume_snippet": "2 years as a general data analyst, some exposure to embeddings via a course project, no production NLP shipping experience.",
+      "resume_text": "Sofia Ramirez\nData Analyst, 2 years experience.\n\nExperience:\n- Data Analyst, RetailCo (2023-present): SQL reporting, dashboarding, and a side project applying sentence embeddings for product search similarity.\n- Analytics Intern, RetailCo (2022-2023).\n\nSkills: Python, SQL, embeddings (course project), Tableau, pandas.\nEducation: B.S. Statistics, University of Texas at Austin.",
+      "score_breakdown": [
+        {"factor": "Skill overlap", "weight": 0.45, "contribution": 14, "explanation": "2 of 5 required skills matched (Python, embeddings); no spaCy, HuggingFace transformers, or fairness evaluation experience found."},
+        {"factor": "Semantic JD similarity", "weight": 0.35, "contribution": 22, "explanation": "Embedding cosine similarity 0.58 — related data background but not NLP-specialized."},
+        {"factor": "Experience level match", "weight": 0.20, "contribution": 26, "explanation": "2 years experience, no production NLP shipping history noted."}
+      ]
+    },
+    {
+      "id": "cand-1006",
+      "job_req_id": "req-103",
+      "name": "Ben Carlisle",
+      "email": "ben.carlisle@example.com",
+      "school": "Portland State University",
+      "score": 79,
+      "status": "reviewed",
+      "top_matched_skills": ["React", "API integration", "internal tools"],
+      "top_missing_skills": ["server-rendered templating"],
+      "resume_snippet": "3 years frontend, mostly React SPAs, built two internal admin dashboards from scratch working directly with backend teams.",
+      "resume_text": "Ben Carlisle\nFrontend Engineer, 3 years experience.\n\nExperience:\n- Frontend Engineer, OpsTools Inc (2022-present): Built two internal admin dashboards in React, working directly with backend engineers to define API contracts. Focus on speed and clarity over visual polish.\n- Frontend Developer, WebAgency (2021-2022): Client marketing sites.\n\nSkills: React, TypeScript, REST API integration, internal tooling, Figma (basic).\nEducation: B.S. Computer Science, Portland State University.",
+      "score_breakdown": [
+        {"factor": "Skill overlap", "weight": 0.45, "contribution": 32, "explanation": "3 of 4 required skills matched; no direct experience with server-rendered templating (Jinja/ERB-style)."},
+        {"factor": "Semantic JD similarity", "weight": 0.35, "contribution": 28, "explanation": "Embedding cosine similarity 0.79 — strong match on 'internal admin tools' framing."},
+        {"factor": "Experience level match", "weight": 0.20, "contribution": 19, "explanation": "3 years experience, JD did not specify a minimum."}
+      ]
+    }
+  ],
+  "audit_log": [
+    {
+      "timestamp": "2026-08-05T14:32:00Z",
+      "candidate_id": "cand-1003",
+      "action": "score_computed",
+      "actor": "system",
+      "model_version": "matcher-v0.3.1",
+      "reason": null
+    },
+    {
+      "timestamp": "2026-08-06T09:14:00Z",
+      "candidate_id": "cand-1003",
+      "action": "override",
+      "actor": "hr-reviewer:jsmith",
+      "model_version": "matcher-v0.3.1",
+      "reason": "Score under-weights her 2 years leading a Kafka-based pipeline team, which is directly relevant even though 'Kafka' wasn't an exact keyword match against our 'message queues' JD phrasing. Advancing to onsite."
+    },
+    {
+      "timestamp": "2026-08-05T14:32:00Z",
+      "candidate_id": "cand-1002",
+      "action": "score_computed",
+      "actor": "system",
+      "model_version": "matcher-v0.3.1",
+      "reason": null
+    },
+    {
+      "timestamp": "2026-08-06T10:02:00Z",
+      "candidate_id": "cand-1002",
+      "action": "reviewed",
+      "actor": "hr-reviewer:jsmith",
+      "model_version": "matcher-v0.3.1",
+      "reason": "Reviewed, not advancing — below target seniority for this req."
+    },
+    {
+      "timestamp": "2026-08-04T11:20:00Z",
+      "candidate_id": "cand-1006",
+      "action": "score_computed",
+      "actor": "system",
+      "model_version": "matcher-v0.3.1",
+      "reason": null
+    },
+    {
+      "timestamp": "2026-08-06T15:47:00Z",
+      "candidate_id": "cand-1006",
+      "action": "reviewed",
+      "actor": "hr-reviewer:agupta",
+      "model_version": "matcher-v0.3.1",
+      "reason": "Reviewed — solid candidate, req closed before scheduling could happen."
+    }
+  ]
+}

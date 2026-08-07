@@ -1,0 +1,37 @@
+{% extends "dashboard/base.html" %}
+{% block title %}Job Reqs{% endblock %}
+{% block content %}
+  <hgroup>
+    <h1>Job Reqs</h1>
+    <p>Select a req to review ranked candidates.</p>
+  </hgroup>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Department</th>
+        <th>Status</th>
+        <th>Candidates</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for req in job_reqs %}
+      <tr>
+        <td>{{ req.title }}</td>
+        <td>{{ req.department }}</td>
+        <td>
+          {% if req.status == "open" %}
+            <mark>open</mark>
+          {% else %}
+            <span class="status-badge">closed</span>
+          {% endif %}
+        </td>
+        <td>{{ req.candidate_count }}</td>
+        <td><a href="/dashboard/reqs/{{ req.id }}" role="button" class="outline">Review</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

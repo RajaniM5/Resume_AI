@@ -1,0 +1,17 @@
+Sam Lee
+sam.lee@example.com | (555) 987-6543
+
+SUMMARY
+Junior backend developer with 1 year of experience in Python and SQL.
+
+SKILLS
+Python, SQL, Git, Flask
+
+EXPERIENCE
+Junior Developer, Startup Co
+Jul 2023 - Present
+- Maintained internal Flask services
+- Wrote SQL queries for internal reporting
+
+EDUCATION
+Bachelor of Arts in Economics, Coastal College, 2022

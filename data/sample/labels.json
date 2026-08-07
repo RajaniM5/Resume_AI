@@ -1,0 +1,10 @@
+[
+  {"resume_id": "jane_backend", "job_id": "backend_engineer", "shortlisted": true},
+  {"resume_id": "sam_junior_backend", "job_id": "backend_engineer", "shortlisted": false},
+  {"resume_id": "priya_data_analyst", "job_id": "backend_engineer", "shortlisted": false},
+  {"resume_id": "alex_no_match", "job_id": "backend_engineer", "shortlisted": false},
+  {"resume_id": "priya_data_analyst", "job_id": "data_analyst", "shortlisted": true},
+  {"resume_id": "sam_junior_backend", "job_id": "data_analyst", "shortlisted": false},
+  {"resume_id": "jane_backend", "job_id": "data_analyst", "shortlisted": false},
+  {"resume_id": "alex_no_match", "job_id": "data_analyst", "shortlisted": false}
+]

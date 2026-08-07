@@ -1,0 +1,62 @@
+{% extends "dashboard/base.html" %}
+{% block title %}{{ candidate.name }}{% endblock %}
+{% block content %}
+  <p><a href="/dashboard/reqs/{{ job_req.id }}">&larr; {{ job_req.title }}</a></p>
+
+  <hgroup>
+    <h1><span class="pii">{{ candidate.name }}</span></h1>
+    <p class="pii">{{ candidate.email }} · {{ candidate.school }}</p>
+  </hgroup>
+
+  <div class="grid">
+    <div>
+      <span class="score-chip {% if candidate.score >= 85 %}score-high{% elif candidate.score >= 65 %}score-mid{% else %}score-low{% endif %}" style="font-size:1.2rem;">
+        {{ candidate.score }}
+      </span>
+      <span class="status-badge status-{{ candidate.status }}">{{ candidate.status }}</span>
+    </div>
+  </div>
+
+  {% if candidate.status == "overridden" and candidate.override_reason %}
+  <article style="border-left: 4px solid #b45309;">
+    <strong>Overridden by reviewer.</strong> {{ candidate.override_reason }}
+  </article>
+  {% endif %}
+
+  <h2>Score breakdown</h2>
+  <table>
+    <thead>
+      <tr><th>Factor</th><th>Weight</th><th>Contribution</th><th>Why</th></tr>
+    </thead>
+    <tbody>
+      {% for row in candidate.score_breakdown %}
+      <tr class="breakdown-row">
+        <td>{{ row.factor }}</td>
+        <td>{{ (row.weight * 100)|round|int }}%</td>
+        <td>
+          <span class="contribution-bar" style="width: {{ row.contribution }}px;"></span>{{ row.contribution }}
+        </td>
+        <td>{{ row.explanation }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="grid">
+    <div>
+      <h2>Resume</h2>
+      <article><pre style="white-space: pre-wrap; font-family: inherit;">{{ candidate.resume_text }}</pre></article>
+    </div>
+    <div>
+      <h2>Job description</h2>
+      <article><pre style="white-space: pre-wrap; font-family: inherit;">{{ job_req.jd_text }}</pre></article>
+    </div>
+  </div>
+
+  <h2>Override decision</h2>
+  <form method="post" action="/dashboard/candidates/{{ candidate.id }}/override">
+    <label for="reason">Reason (required)</label>
+    <textarea id="reason" name="reason" required placeholder="Explain why this score should be overridden — this is logged to the audit trail."></textarea>
+    <button type="submit">Override score</button>
+  </form>
+{% endblock %}

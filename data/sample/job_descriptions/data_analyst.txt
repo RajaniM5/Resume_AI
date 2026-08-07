@@ -1,0 +1,14 @@
+Data Analyst
+
+The Role
+We're looking for a data analyst to build reporting and dashboards for leadership.
+
+Requirements
+- 3+ years of experience in data analysis
+- Proficiency in SQL and Python
+- Experience with Tableau or Power BI
+- Bachelor's degree required
+
+Nice to have
+- Experience with Pandas
+- Experience with Excel

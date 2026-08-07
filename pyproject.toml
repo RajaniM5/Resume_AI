@@ -1,0 +1,55 @@
+[project]
+name = "resume-ai"
+version = "0.1.0"
+description = "AI-powered resume screening system with NLP/ML scoring and HR system integration APIs"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "pydantic>=2.8",
+    "pydantic-settings>=2.4",
+    "sqlalchemy>=2.0",
+    "psycopg[binary]>=3.2",
+    "celery>=5.4",
+    "redis>=5.0",
+    "pdfplumber>=0.11",
+    "python-docx>=1.1",
+    "jinja2>=3.1",
+    "python-multipart>=0.0.9",
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+# NLP/embedding deps are separated out: they pull in torch, which has no wheel
+# for every dev machine (e.g. Intel macOS + Python 3.13). CI and Docker images
+# install this extra; local API/worker-only dev doesn't need to.
+ml = [
+    "spacy>=3.7",
+    "sentence-transformers>=3.0",
+]
+# OCR fallback for scanned/image-only PDFs. Needs system binaries (tesseract,
+# poppler) not present on every dev machine, so kept separate from `ml`.
+ocr = [
+    "pytesseract>=0.3.10",
+    "pdf2image>=1.17",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "ruff>=0.6",
+    "mypy>=1.11",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["api*", "worker*", "ml*", "integrations*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

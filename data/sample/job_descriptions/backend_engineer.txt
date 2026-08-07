@@ -1,0 +1,14 @@
+Senior Backend Engineer
+
+The Role
+We're hiring a senior backend engineer to build and scale our core APIs.
+
+Requirements
+- 5+ years of experience in backend software engineering
+- Strong proficiency in Python and REST APIs
+- Experience with PostgreSQL, Docker, and Kubernetes
+- Bachelor's degree in Computer Science or related field
+
+Nice to have
+- Experience with AWS
+- Experience with FastAPI
